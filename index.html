@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفاف الضابط والجميلة</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Alexandria:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --army-green: #1b261b;
+            --gold: #c5a059;
+            --cream: #f9f7f2;
+            --dark: #0c0c0c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Alexandria', sans-serif;
+            background-color: var(--dark);
+            color: var(--army-green);
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* حاوية الموقع الرئيسية */
+        .wrapper {
+            background-color: var(--cream);
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            padding-bottom: 50px;
+        }
+
+        /* تأثير البريق المتطاير */
+        .sparkles {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* القسم العلوي - الصورة الشخصية (رسوم كرتونية) */
+        .hero-section {
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #e8e2d6, var(--cream));
+            position: relative;
+        }
+
+        .couple-illustration {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* تفاصيل الدعوة */
+        .content {
+            padding: 0 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .bismillah {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--army-green);
+            opacity: 0.8;
+        }
+
+        .rank {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            background: var(--army-green);
+            color: var(--gold);
+            display: inline-block;
+            padding: 4px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .names {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            line-height: 1.2;
+            color: var(--army-green);
+        }
+
+        .divider {
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 25px auto;
+        }
+
+        .details-text {
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* العداد التنازلي */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .time-box {
+            background: white;
+            border: 1px solid #eee;
+            width: 70px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .time-box span { font-size: 1.5rem; font-weight: 700; color: var(--gold); }
+        .time-box label { font-size: 0.6rem; color: #888; }
+
+        /* الأزرار التفاعلية */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 40px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-location {
+            border: 1px solid var(--army-green);
+            color: var(--army-green);
+        }
+
+        .btn-rsvp {
+            background-color: var(--army-green);
+            color: var(--gold);
+            box-shadow: 0 10px 20px rgba(27, 38, 27, 0.2);
+        }
+
+        .btn:hover { transform: scale(1.03); }
+
+        /* مشغل الموسيقى */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .music-btn {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: var(--army-green);
+            color: var(--gold);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        /* تأثير الظهور التدريجي */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s all ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <canvas class="sparkles" id="sparkles"></canvas>
+
+        <section class="hero-section">
+            <div class="couple-illustration">
+                <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="150" cy="380" rx="80" ry="10" fill="rgba(0,0,0,0.1)" />
+                    
+                    <g transform="translate(60, 100)">
+                        <path d="M20 40 L100 40 L110 250 L10 250 Z" fill="#1b261b" />
+                        <path d="M40 40 L60 65 L80 40" fill="none" stroke="#c5a059" stroke-width="2"/>
+                        
+                        <g transform="translate(25, 55)">
+                           <rect width="20" height="40" fill="#2d3e2d" rx="2" />
+                           <path d="M10 5 L12 12 L19 12 L13 16 L15 23 L10 19 L5 23 L7 16 L1 12 L8 12 Z" fill="#c5a059" />
+                        </g>
+
+                        <circle cx="60" cy="110" r="3" fill="#c5a059" />
+                        <circle cx="60" cy="140" r="3" fill="#c5a059" />
+                    </g>
+                    
+                    <g transform="translate(130, 80)">
+                        <path d="M20 270 Q70 20 120 270 L140 300 L0 300 Z" fill="white" stroke="#eee" />
+                        <path d="M40 80 Q70 60 100 80" fill="none" stroke="#c5a059" stroke-width="1" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="bismillah reveal">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            
+            <div class="rank reveal">OFFICER WEDDING EDITION</div>
+            
+            <div class="details-text reveal">
+                بكل الحب والفخر نتشرف بدعوتكم <br> لحضور حفل زفاف ابننا
+            </div>
+
+            <div class="names reveal">
+                الملازم أحمد <br> <span style="font-size: 1.5rem; color: var(--gold);">&</span> <br> سارة علي
+            </div>
+
+            <div class="divider reveal"></div>
+
+            <div class="details-text reveal">
+                وذلك بمشيئة الله تعالى يوم <br>
+                <strong>الجمعة | 20 يناير 2026</strong> <br>
+                الساعة 8:00 مساءً <br>
+                بغداد - قاعة الأميرات الملكية
+            </div>
+
+            <div class="countdown-container reveal">
+                <div class="time-box"><span>07</span><label>أيام</label></div>
+                <div class="time-box"><span>12</span><label>ساعة</label></div>
+                <div class="time-box"><span>45</span><label>دقيقة</label></div>
+            </div>
+
+            <div class="actions reveal">
+                <a href="#" class="btn btn-rsvp">تأكيد الحضور (RSVP)</a>
+                <a href="#" class="btn btn-location">📍 موقع القاعة على الخارطة</a>
+            </div>
+
+            <p style="margin-top: 50px; font-family: 'Amiri', serif; font-size: 1.2rem;" class="reveal">
+                حضوركم شرف لنا وعز لليلتنا
+            </p>
+        </section>
+    </div>
+
+    <div class="music-player">
+        <button class="music-btn" onclick="toggleMusic()">
+            <i class="fas fa-music" id="music-icon"></i>
+        </button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('sparkles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        for(let i=0; i<50; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 1,
+                speed: Math.random() * 1 + 0.5
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0,0, canvas.width, canvas.height);
+            ctx.fillStyle = "#c5a059";
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+                ctx.fill();
+                p.y += p.speed;
+                if(p.y > canvas.height) p.y = -10;
+            });
+            requestAnimationFrame(draw);
+        }
+        draw();
+
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight - 50) {
+                    el.classList.add('active');
+                }
+            });
+        });
+        
+        window.onload = () => {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+        }
+
+        function toggleMusic() {
+            const icon = document.getElementById('music-icon');
+            icon.classList.toggle('fa-spin');
+        }
+    </script>
+</body>
+</html>
